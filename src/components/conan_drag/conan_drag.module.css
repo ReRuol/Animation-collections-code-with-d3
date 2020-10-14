@@ -1,0 +1,119 @@
+.main{
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+    overflow: hidden;
+    color: #fff;
+}
+
+.mobile{
+    width: 100%;
+    height: 98vh;
+    font-size: 12px;
+    overflow: hidden;
+    color: #fff;
+}
+svg{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+#detailWrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;;
+    display: none;
+    user-select: none;
+}
+
+#detailBg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(255, 255, 255,0.2);
+    z-index: 10;
+}
+
+
+.main #detailWrap #detail{
+    position: absolute;
+    z-index: 100;
+    width: 60%;
+    height: 70%;
+    left: 20%;
+    top: 25%;
+    background-color: #375c8b;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+
+    transition: all 1s;
+    -webkit-transition: all 1s;
+    -moz-transition: all 1s;
+    -ms-transition: all 1s;
+    -o-transition: all 1s;
+    opacity: 0;
+}
+
+#detail h1{
+    position: absolute;
+    top: 12%;
+    left: 18%;
+    font-size: 1.5rem;
+}
+
+#imgWrap{
+    width: 30%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 31%;
+    left: 10%;
+}
+
+#img{
+    max-width: 120%;
+    max-height: 120%;
+    border: 12px solid rgb(255, 255, 255);
+}
+
+#textWrap{
+    width: 50%;
+    height: 90%;
+    position: absolute;
+    right: 0;
+    top: 5%;
+    border-left: 1px solid black;
+}
+
+.main #detailWrap #detail #text{
+    width: 85%;
+    height: 90%;
+    position: relative;
+    padding-top: 1%;
+    padding-right:3%;
+    left: 5%;
+    font-size: 0.9rem;
+    overflow: auto;
+    line-height: 1.7rem;
+}
+
+#text::-webkit-scrollbar{
+    width: 4px;
+}
+#text::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgba(0,0,0,0.2);
+}
+.text::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 0;
+    background: rgba(0,0,0,0.1);
+
+}

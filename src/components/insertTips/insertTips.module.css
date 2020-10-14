@@ -1,0 +1,123 @@
+.area{
+  min-width: 3rem;
+  min-height: 3rem;
+  position: fixed;
+  right: 3%;
+  top: 5%;
+  display: flex;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  overflow: hidden;
+  z-index: 9;
+}
+
+
+.tipIcon{
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-image: url('./images/tips.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9;
+}
+
+.closeIcon{
+  width: 1.5rem;
+  height: 1.5rem;
+  background-image: url('./images/close.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  z-index: 10;
+  opacity: 0;
+}
+
+.contentWrap{
+  opacity: 1;
+  width: 12rem;
+  height: 12rem;
+  background-color: rgba(119, 137, 158,0.9);
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  border-radius: 2%;
+  -webkit-border-radius: 2%;
+  -moz-border-radius: 2%;
+  -ms-border-radius: 2%;
+  -o-border-radius: 2%;
+  position: relative;
+  top: 0;
+  left: 110%;
+  z-index: 10;
+  color: #fff;
+  overflow: auto;
+  z-index: 9;
+}
+
+.contentWrap::-webkit-scrollbar{
+  width: 0;
+}
+
+.content{
+  width: 88%;
+  min-height: 90%;
+  padding: 6% 8% 2%;
+  text-align: center;
+  overflow: scroll;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  font-size: 0.95rem;
+  font-weight: bold;
+}
+
+.content::-webkit-scrollbar{
+  width: 0;
+}
+
+.content p{
+  text-align: left;
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin-top: 2%;
+  margin-left: 6%;
+}
+
+.content p:nth-child(1){
+  margin-top: 5%;
+}
+
+
+
+

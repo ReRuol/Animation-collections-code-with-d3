@@ -1,0 +1,126 @@
+#area{
+  width: 50%;
+  height: 60%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  -moz-transform:translate(-50%,-50%);
+  -ms-transform:translate(-50%,-50%);
+  -o-transform:translate(-50%,-50%);
+  background: rgb(78, 74, 74);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  overflow-y: auto;
+  transition: all 1s;
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  z-index: 10;
+}
+
+#area::-webkit-scrollbar{
+  width: 4px;
+}
+
+#area::-webkit-scrollbar-thumb{
+  width: 4px;
+  border-radius: 10px;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+}
+
+.valley{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-image: url('./images/valley.png');
+  background-size: 120%;
+  background-repeat: no-repeat;
+  background-position: top;
+  overflow: hidden;
+}
+
+
+.mountain-peak{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  background-image: url('./images/mountainPeak.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% -20%;
+  filter:blur(0.5px);
+  -webkit-filter:blur(0.5px);
+}
+
+.content{
+  position: relative;
+  box-sizing: border-box;
+  padding: 20px 0 20px 30px;
+  width: 100%;
+  color: #fff;
+  font-family: Poppins;
+  background-color: #141611;
+  background-image: url('./images/contentBg.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:left bottom;
+  box-shadow: 0 -2px 35px 30px rgba(20, 22, 17);
+  user-select: none;
+}
+
+
+.content p{
+  line-height: 30px;
+  font-weight: lighter;
+}
+
+
+
+
+.fullScreen{
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  position: fixed;
+  top: 20px;
+  right: 4%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.full{
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/fullScreen.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+}
+
+.narrow{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('./images/cancelFullScreen.png');
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: center;
+  opacity: 0;
+}

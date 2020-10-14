@@ -1,0 +1,41 @@
+#area{
+width: 100%;
+height: 100%;
+
+}
+
+#svg{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    left: 0%;
+}
+
+#svg path{
+    stroke:black;
+    stroke-opacity: 0.4;
+    stroke-width: 0.8;
+}
+
+#svg g:nth-child(2){
+    fill: #fff;
+    background-color: #fff;
+}
+
+#earthPath{
+    fill:#5f94c0;
+}
+
+
+.countries:hover{
+    fill:white;
+}
+
+.economyColorG{
+    color: rgb(66, 71, 78);
+}
+
+.tick{
+    cursor: pointer;
+}

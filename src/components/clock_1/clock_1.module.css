@@ -1,0 +1,210 @@
+.page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+}
+
+.dark{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  background:#091921;
+}
+
+.light{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  background:#d1dae3;
+}
+
+.dark .toggleClass{
+  position: absolute;
+  right: 15rem;
+  top: 5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #d1dae3;
+  font-size: 1.2rem;
+  font-family: consolas;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dark .toggleClass::before{
+  content: 'Light Mode';
+  left: 1.4rem;
+  line-height: 1.2rem;
+  color: #d1dae3;
+  position: absolute;
+  white-space: nowrap;
+}
+
+.light .toggleClass{
+  position: absolute;
+  right: 15rem;
+  top: 5rem;
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 50%;
+  background: #091921;
+  font-size: 1.2rem;
+  font-family: consolas;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.light .toggleClass::before{
+  content: 'Dark Mode';
+  left: 1.4rem;
+  line-height: 1.2rem;
+  color: #091921;
+  position: absolute;
+  white-space: nowrap;
+}
+
+
+
+.clock{
+  width: 32rem;
+  height: 32rem;
+  display: flex;
+  justify-content: center;
+  align-items: center ;
+  background:#091921 url('./images/clock.png');
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+  border: solid 3px #091921 ;
+  /* box-shadow: 0 -20px 15px rgba(255, 255, 255, 0.05),
+              inset 0 -20px 15px rgba(255, 255, 255, 0.05),
+              0 20px 15px rgba(0, 0, 0, 0.05),
+              inset 0 -20px 15px rgba(0, 0, 0, 0.05); */
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.05),
+              20px 20px 20px  rgba(0, 0, 0, 0.3),
+              inset -8px -8px 15px rgba(255, 255, 255, 0.05),
+              inset 20px 20px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.lightClock{
+  box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.5),
+              20px 20px 20px  rgba(0, 0, 0, 0.1),
+              inset -8px -8px 15px rgba(255, 255, 255, 0.5),
+              inset 20px 20px 20px rgba(0, 0, 0, 0.1);
+  background:#d1dae3 url('./images/clock.png');
+  border: solid 3px #d1dae3 ;
+  background-repeat: no-repeat;
+  background-size: auto;
+  background-position: center;
+}
+
+.clock::before{
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: rgb(184, 183, 183);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+
+  z-index: 100;
+}
+
+.clock .hour , .clock .min,  .clock .sec{
+  position: absolute;
+}
+
+.clock .hour, .hr{
+  width: 10rem;
+  height: 10rem;
+}
+
+.clock .min, .mn{
+  width: 16rem;
+  height: 16rem;
+}
+
+.clock .sec, .sc{
+  width: 18rem;
+  height: 18rem;
+}
+
+.hr, .mn , .sc{
+  display: flex;
+  justify-content: center;
+  /*align-items: center;
+  */position: absolute;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.hr::before{
+  content: '';
+  position: absolute;
+  width: 0.6rem;
+  height: 5rem;
+  background: #384263;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  -ms-border-radius: 6px 6px 0 0;
+  -o-border-radius: 6px 6px 0 0;
+}
+
+.mn::before{
+  content: '';
+  position: absolute;
+  width: 0.4rem;
+  height: 8rem;
+  background: #972626;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  -ms-border-radius: 6px 6px 0 0;
+  -o-border-radius: 6px 6px 0 0;
+}
+
+.sc::before{
+  content: '';
+  position: absolute;
+  width: 0.2rem;
+  height: 10.8rem;
+  background: #3066a3;
+  z-index: 10;
+  border-radius: 6px 6px 0 0;
+  -webkit-border-radius: 6px 6px 0 0;
+  -moz-border-radius: 6px 6px 0 0;
+  -ms-border-radius: 6px 6px 0 0;
+  -o-border-radius: 6px 6px 0 0;
+}
