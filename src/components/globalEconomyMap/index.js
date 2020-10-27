@@ -14,50 +14,70 @@ export default class globalEconomyMap extends React.Component {
         tips:['1.使用d3.js绘制的世界地图','2.不同颜色分区代表不同经济水平','3.地图可放大缩小和拖拽','4.鼠标悬浮地图将显示相应国家板块'
         ,'5.点击颜色比例尺将高亮对应经济水平国家'
         ,'6.再次点击比例尺取消高亮'
-      ]
+        ]
       };
   }
   componentDidMount(){
     this.initGeo()
+
+  }
+
+  componentWillUnmount(){
+
   }
 
   initGeo(){
     const svgDom = this.refs['svg']
     const svg = d3.select('#globalEconomyMap-module-svg')//使用d3选择的svg能够后续添加元素
 
-    //获取svgDom的宽高
-    const width = svgDom.clientWidth
-    const height = svgDom.clientHeight
+    let width = svgDom.clientWidth
+    let height = svgDom.clientHeight
+
+    let pjScale
+    let clPos
+    let ecScale
+
+
+    if(width>height){
+      pjScale = width/6
+      clPos = height*0.67
+      ecScale = 1
+    }else{
+      pjScale = height / 7
+      clPos = height
+      ecScale = 0.68
+    }
+
 
     const projection = d3.geoNaturalEarth1()
-          .center([-70,25])
-          .scale(height/3-20)
+      .translate([width/2,height/2])
+      .scale([pjScale])
     const pathGenerator = d3.geoPath(projection)
+
+    //根据resize事件获取svgDom的宽高
+    // window.addEventListener("resize",function(){
+    //   width = svgDom.clientWidth
+    //   height = svgDom.clientHeight
+    //   if(height>width){
+    //     projection.scale()
+    //   }
+    //
+    // },false)
 
     //建立一个worldG分组用来保存地球绘制图形
     const worldG = svg.append('g')
-      .attr('width',height)
+      .attr('width',width)
       .attr('height',height)
+
+
 
     //为地图设置缩放和拖动
     svg.call(d3.zoom()
-    .scaleExtent([0.5, 3])
+    .scaleExtent([0.5, 5])
     .on('zoom',zoom_actions))
 
     //缩放函数
     function zoom_actions() {
-      //设定拖拽范围
-      if(d3.event.transform.x <= -width){
-        d3.event.transform.x = -width
-      }else if(d3.event.transform.x >= width){
-        d3.event.transform.x = width
-      }
-      if(d3.event.transform.y <= -height){
-        d3.event.transform.y = -height
-      }else if(d3.event.transform.y >= height){
-        d3.event.transform.y = height
-      }
-
       return worldG.attr("transform", d3.event.transform)
     }
 
@@ -79,8 +99,9 @@ export default class globalEconomyMap extends React.Component {
     //在worldG分组中添加一个g,使其在更改selectedColorValue后能够重新绘制世界地图
     const countriesPath = worldG.selectAll('g').data([null]).enter().append('g')
 
-    const economyColorG = svg.append('g')//定义一个表示经济分类的颜色指示图
+    const economyColorG = svg.append('g')//定义一个表示经济分类的颜色指示图的g
     .attr('class','globalEconomyMap-module-economyColorG')
+    .attr('transform',`scale(${ecScale}),translate(${width/10},${clPos})`)
 
     Promise.all([
       d3.tsv('https://unpkg.com/world-atlas@1.1.4/world/110m.tsv'),//获取国家经济以及名称
@@ -132,13 +153,11 @@ export default class globalEconomyMap extends React.Component {
       economyColorG
         .call(colorLegend,{
           colorScale:economyColorScale
-          ,width
-          ,height
-          ,circleRadius:11
-          ,spacing:30
+          ,circleRadius:10
           ,onClick
           ,selectedColorValue
           })
+
     }
 
   }

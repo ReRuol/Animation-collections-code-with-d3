@@ -286,6 +286,7 @@ export default class dragIndex extends React.Component {
             if(item.source.name === d.name || item.target.name === d.name){
               return selectedEdgesData.push(item)
             }
+            return true
           })
           //添加连接节点
           selectedLinksNodes.length = 0
@@ -295,6 +296,7 @@ export default class dragIndex extends React.Component {
             }else if(item.target.name ===selectedNodesData){
               return selectedLinksNodes.push(item.source.name)
             }
+            return true
           })
 
         }else{

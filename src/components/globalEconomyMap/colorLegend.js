@@ -1,20 +1,21 @@
 /* eslint-disable jsx-a11y/anchor-has-content */
 
 export default function colorLegend (colorG ,props){
-  const {colorScale,width,height,circleRadius,spacing,onClick,selectedColorValue} = props
-  
+  const {colorScale,circleRadius,onClick,selectedColorValue} = props
+
   //添加背景矩形
   colorG.selectAll('rect').data([null])
     .enter()
     .append('rect')
-    .attr('width',250)
+    .attr('width',200)
     .attr('height',220)
     .attr('fill','#fff')
     .attr('transform', (d,i)=>{
-      return `translate(${width/15-20},${height*0.7-20})`
+      return `translate(${0},${0})`
     })
-    .attr('rx',20) 
+    .attr('rx',20)
     .attr('opacity',0.85)
+
 
   const groups = colorG.selectAll('g')
     .data(colorScale.domain());
@@ -24,7 +25,7 @@ export default function colorLegend (colorG ,props){
 
   groupsEnter.merge(groups)
     .attr('transform', (d,i)=>{
-      return `translate(${width/15},${i*spacing+height*0.7})`
+      return `translate(${20},${20+i*30})`
     })
     .on('click',d => onClick(
       d === selectedColorValue?
@@ -34,7 +35,7 @@ export default function colorLegend (colorG ,props){
     )
 
   groups.exit().remove()
-  
+
   //添加圆形颜色图形
   groupsEnter.append('circle')
     .merge(groups.select('circle'))
@@ -43,7 +44,7 @@ export default function colorLegend (colorG ,props){
 
   //中文对应描述
   const ChineseText = ['1.发达地区:7国集团','2.发达地图:非7国集团','3.新兴地区:BRIC','4.新兴地区:MIKT','5.新兴地区:G20','6.发展中地区','7.欠发达地区']
-  
+
   //添加对应文字描述
   groupsEnter.append('text')
   .merge(groups.select('text'))
@@ -51,6 +52,6 @@ export default function colorLegend (colorG ,props){
     .attr('y',5)
     .attr('x',20)
     .attr('fill',' rgb(66, 71, 78)')
-  
-}
+    .attr('font-size',15)
 
+}

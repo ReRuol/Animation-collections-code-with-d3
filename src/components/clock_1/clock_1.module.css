@@ -26,7 +26,7 @@
 
 .dark .toggleClass{
   position: absolute;
-  right: 15rem;
+  right: 35%;
   top: 5rem;
   width: 1.2rem;
   height: 1.2rem;
@@ -91,7 +91,7 @@
   align-items: center ;
   background:#091921 url('./images/clock.png');
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   border: solid 3px #091921 ;
   /* box-shadow: 0 -20px 15px rgba(255, 255, 255, 0.05),
@@ -117,7 +117,7 @@
   background:#d1dae3 url('./images/clock.png');
   border: solid 3px #d1dae3 ;
   background-repeat: no-repeat;
-  background-size: auto;
+  background-size: cover;
   background-position: center;
 }
 
@@ -207,4 +207,11 @@
   -moz-border-radius: 6px 6px 0 0;
   -ms-border-radius: 6px 6px 0 0;
   -o-border-radius: 6px 6px 0 0;
+}
+
+@media (max-device-width:414px){
+  .clock{
+    width: 320px;
+    height: 320px;
+  }
 }

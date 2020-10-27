@@ -78,15 +78,22 @@
   -moz-transition: 0.6s;
   -ms-transition: 0.6s;
   -o-transition: 0.6s;
-  
+
 }
 
 .search-box:hover > .search-txt{
-  width: 260px;
+  width: 200px;
   padding-right: 10px;
   padding-left: 10px;
 }
 
 .search-box:hover > .search-btn{
   background-color:#fff;
+}
+
+@media (max-device-width:680px) {
+  .area{
+    width: 80%;
+    height: 30%;
+  }
 }

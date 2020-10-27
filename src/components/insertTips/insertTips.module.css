@@ -1,10 +1,9 @@
 .area{
-  min-width: 3rem;
-  min-height: 3rem;
   position: fixed;
-  right: 3%;
-  top: 5%;
-  display: flex;
+  right: 5%;
+  top: 8%;
+  min-width: 30px;
+  min-height: 30px;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -16,8 +15,8 @@
 
 
 .tipIcon{
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -33,31 +32,13 @@
   -moz-transition: all 0.8s;
   -ms-transition: all 0.8s;
   -o-transition: all 0.8s;
-  position: absolute;
-  top: 0;
-  right: 0;
+  position: fixed;
+  top: 10%;
+  right: 5%;
   z-index: 9;
-}
-
-.closeIcon{
-  width: 1.5rem;
-  height: 1.5rem;
-  background-image: url('./images/close.png');
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-  position: absolute;
-  top: 0;
-  right: 0;
-  cursor: pointer;
-  transition: all 0.4s;
-  -webkit-transition: all 0.4s;
-  -moz-transition: all 0.4s;
-  -ms-transition: all 0.4s;
-  -o-transition: all 0.4s;
-  z-index: 10;
   opacity: 0;
 }
+
 
 .contentWrap{
   opacity: 1;
@@ -76,15 +57,33 @@
   -o-border-radius: 2%;
   position: relative;
   top: 0;
-  left: 110%;
+  left: 0%;
   z-index: 10;
   color: #fff;
-  overflow: auto;
+  overflow-y: auto;
   z-index: 9;
 }
 
 .contentWrap::-webkit-scrollbar{
   width: 0;
+}
+
+.closeIcon{
+  width: 25px;
+  height: 25px;
+  background-image: url('./images/close.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  z-index: 10;
 }
 
 .content{
@@ -118,6 +117,21 @@
   margin-top: 5%;
 }
 
+@media (max-device-width: 414px) {
+
+  .area{
+    right: 1%;
+  }
+
+  .tipIcon{
+    width: 30px;
+    height: 30px;
+  }
+
+  .contentWrap{
+    width: 60vw;
+    height: 30vh;
+  }
 
 
-
+}

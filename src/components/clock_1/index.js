@@ -14,7 +14,7 @@ export default class clock_1 extends React.Component {
   }
   componentDidMount(){
     this.runClock()
-  } 
+  }
 
   //让时钟走起来
   runClock(){
@@ -43,7 +43,7 @@ export default class clock_1 extends React.Component {
       hr.style.transform =  `rotate(${(hour)+(minute/12)}deg)`;
       mn.style.transform =  `rotate(${(minute)+(second/60)}deg)`;
       sc.style.transform =  `rotate(${second}deg)`;
-    },1000) 
+    },1000)
   }
 
   //切换白天与黑夜模式
@@ -66,21 +66,24 @@ export default class clock_1 extends React.Component {
       <div className={Css['page']}>
           <Tips tipText={this.state.tips}></Tips>
           <div className={this.state.isDark?Css['dark']:Css['light']} >
-          <div className={Css['toggleClass']} onClick={this.toggleClass.bind(this)}></div>
-              <div className={this.state.isDark?Css['clock']:Css['clock']+' '+Css['lightClock']}>
-                  <div className={Css['hour']}>
-                      <div className={Css['hr']} ref='hr'></div>
-                  </div>
-                  <div className={Css['min']}>
-                      <div className={Css['mn']}  ref='mn'></div>
-                  </div>
-                  <div className={Css['sec']}>
-                      <div className={Css['sc']}  ref='sc'></div>
-                  </div>
-              </div>
+
+            <div className={Css['toggleClass']} onClick={this.toggleClass.bind(this)}></div>
+
+            <div className={this.state.isDark?Css['clock']:Css['clock']+' '+Css['lightClock']}>
+                <div className={Css['hour']}>
+                    <div className={Css['hr']} ref='hr'></div>
+                </div>
+                <div className={Css['min']}>
+                    <div className={Css['mn']}  ref='mn'></div>
+                </div>
+                <div className={Css['sec']}>
+                    <div className={Css['sc']}  ref='sc'></div>
+                </div>
+            </div>
+
           </div>
       </div>
     );
   }
-  
+
 }
